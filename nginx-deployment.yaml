@@ -14,7 +14,14 @@ spec:
     spec:
       containers:
         - name: nginx
-          image: my-nginx-app:v1
+          image: kishore8673/my-nginx-app:v1
+          resources:
+            limits:
+              cpu: "1"
+              memory: "512Mi"
+            requests:
+              cpu: "0.5"
+              memory: "256Mi"
           volumeMounts:
             - name: nginx-storage
               mountPath: /usr/share/nginx/html
